@@ -1,0 +1,18 @@
+Font licenses — sagokriyo.com
+=============================
+
+Sora (Sora.woff2)
+  Copyright 2019 The Sora Project Authors (https://github.com/sora-xor/sora-font)
+  Licensed under the SIL Open Font License 1.1 (https://openfontlicense.org)
+
+Manrope (Manrope.woff2)
+  Copyright 2018 The Manrope Project Authors (https://github.com/sharanda/manrope)
+  Licensed under the SIL Open Font License 1.1 (https://openfontlicense.org)
+
+Malam Poek (MalamPoek.ttf)
+  By Khurasan Studio. Distributed as free for personal and commercial use
+  (as documented with the original download; also bundled in our game
+  "2048 Infinity" under the same terms).
+
+The SIL Open Font License permits bundling, redistribution, and webfont
+use of the licensed fonts. Full OFL text: https://openfontlicense.org

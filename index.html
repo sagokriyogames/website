@@ -1,144 +1,347 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="obsidian">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sago Kriyo — Fun Games for Everyone</title>
-<meta name="description" content="Sago Kriyo builds simple, delightful mobile games including 2048 Infinity. Quick sessions, clean design, pure fun.">
-<style>
-  :root{
-    --bg:#0f1020; --bg2:#191a35; --accent:#ff8a3d; --accent2:#7c5cff;
-    --text:#e9e9f2; --muted:#a7a8c0; --card:#1c1d3a;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif;}
-  body{background:var(--bg);color:var(--text);line-height:1.6;}
-  a{color:inherit;text-decoration:none;}
-  .container{max-width:1100px;margin:0 auto;padding:0 24px;}
-  header{position:sticky;top:0;z-index:50;background:rgba(15,16,32,.85);backdrop-filter:blur(10px);border-bottom:1px solid #2a2b52;}
-  nav{display:flex;align-items:center;justify-content:space-between;height:66px;}
-  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.3rem;}
-  .logo .mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;}
-  .navlinks{display:flex;gap:28px;font-weight:500;color:var(--muted);}
-  .navlinks a:hover{color:var(--text);}
-  .hero{padding:90px 0 70px;text-align:center;background:radial-gradient(1200px 500px at 50% -100px,rgba(124,92,255,.35),transparent);}
-  .hero h1{font-size:3rem;font-weight:900;line-height:1.15;margin-bottom:18px;}
-  .hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;}
-  .hero p{color:var(--muted);font-size:1.2rem;max-width:620px;margin:0 auto 32px;}
-  .btn{display:inline-block;padding:14px 30px;border-radius:12px;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;transition:transform .15s;}
-  .btn:hover{transform:translateY(-2px);}
-  .btn.ghost{background:transparent;border:1px solid #3a3b6a;color:var(--text);margin-left:12px;}
-  section{padding:70px 0;}
-  h2{font-size:2rem;font-weight:800;margin-bottom:10px;text-align:center;}
-  .sub{color:var(--muted);text-align:center;max-width:600px;margin:0 auto 46px;}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;}
-  .card{background:var(--card);border:1px solid #2a2b52;border-radius:18px;overflow:hidden;transition:transform .2s,border-color .2s;}
-  .card:hover{transform:translateY(-6px);border-color:var(--accent2);}
-  .thumb{height:170px;display:flex;align-items:center;justify-content:center;font-size:2.4rem;font-weight:900;color:#fff;}
-  .card .body{padding:22px;}
-  .card h3{font-size:1.25rem;margin-bottom:8px;}
-  .card p{color:var(--muted);font-size:.96rem;margin-bottom:16px;}
-  .tag{display:inline-block;font-size:.72rem;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:10px;}
-  .soon{opacity:.6;}
-  .about{background:var(--bg2);border-radius:24px;padding:56px 40px;text-align:center;}
-  .about p{color:var(--muted);max-width:720px;margin:0 auto;font-size:1.05rem;}
-  .contact-box{background:var(--card);border:1px solid #2a2b52;border-radius:18px;padding:40px;text-align:center;max-width:560px;margin:0 auto;}
-  .contact-box a.email{color:var(--accent);font-weight:700;font-size:1.15rem;}
-  footer{border-top:1px solid #2a2b52;padding:34px 0;color:var(--muted);font-size:.9rem;}
-  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center;}
-  .foot a{color:var(--muted);}.foot a:hover{color:var(--text);}
-  @media(max-width:640px){.navlinks{display:none;}.hero h1{font-size:2.2rem;}}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Sago Kriyo — Calm little games. Endless little wins.</title>
+<meta name="description" content="Sago Kriyo is an independent mobile game studio. Our first title, 2048 Infinity, brings the classic merge puzzle to Google Play with 9 modes, 33 hand-tuned themes, and a calm premium feel. Play a real board right on this page.">
+<link rel="canonical" href="https://sagokriyo.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sago Kriyo">
+<meta property="og:title" content="Sago Kriyo — Calm little games. Endless little wins.">
+<meta property="og:description" content="Independent mobile game studio. 2048 Infinity is arriving on Google Play — 9 modes, 33 themes, offline, calm. Play a live board on the site.">
+<meta property="og:url" content="https://sagokriyo.com/">
+<meta property="og:image" content="https://sagokriyo.com/assets/og/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#cfcbec">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/icons/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+
+<link rel="preload" href="/assets/fonts/MalamPoek.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/assets/fonts/Sora.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/Manrope.woff2" as="font" type="font/woff2" crossorigin>
+
+<script src="/assets/js/themes.js?v=1"></script>
+<script>SK.bootTheme();</script>
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<script src="/assets/js/game2048.js?v=1" defer></script>
+<script src="/assets/js/main.js?v=1" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Sago Kriyo",
+      "url": "https://sagokriyo.com/",
+      "logo": "https://sagokriyo.com/assets/icons/favicon-512.png",
+      "email": "sagokriyo@gmail.com",
+      "description": "Independent mobile game studio crafting calm, premium puzzle games."
+    },
+    {
+      "@type": "MobileApplication",
+      "name": "2048 Infinity",
+      "operatingSystem": "ANDROID",
+      "applicationCategory": "GameApplication",
+      "genre": "Puzzle",
+      "author": { "@type": "Organization", "name": "Sago Kriyo" },
+      "installUrl": "https://play.google.com/store/apps/details?id=com.sagokriyo.infinity",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+  ]
+}
+</script>
 </head>
 <body>
-<header>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="bg-glow" aria-hidden="true"></div>
+
+<header class="site-header">
   <div class="container">
-    <nav>
-      <div class="logo"><div class="mark">SK</div> Sago Kriyo</div>
-      <div class="navlinks">
+    <nav aria-label="Main">
+      <a class="wordmark" href="/">sago kriyo</a>
+      <div class="nav-links">
         <a href="#games">Games</a>
-        <a href="#about">About</a>
+        <a href="#modes">Modes</a>
+        <a href="#about">Studio</a>
         <a href="#contact">Contact</a>
-        <a href="#privacy">Privacy</a>
+      </div>
+      <div class="theme-ctl">
+        <button class="theme-btn" type="button" aria-expanded="false" aria-haspopup="true">
+          <span class="swatch" aria-hidden="true"></span>
+          <span class="theme-name">Obsidian</span>
+        </button>
+        <div class="theme-pop" hidden aria-label="Choose a theme">
+          <p class="dim" style="font-size:.8rem">Real palettes from 2048&nbsp;Infinity — the game ships 33 of these.</p>
+        </div>
       </div>
     </nav>
   </div>
 </header>
 
-<div class="hero">
-  <div class="container">
-    <h1>Simple games,<br><span>endless fun.</span></h1>
-    <p>Sago Kriyo builds easy-to-play, hard-to-put-down mobile games for players of all ages. Quick sessions, clean design, pure enjoyment.</p>
-    <a href="#games" class="btn">Explore Games</a>
-    <a href="#about" class="btn ghost">About Us</a>
-  </div>
-</div>
+<main id="main">
 
-<section id="games">
-  <div class="container">
-    <h2>Our Games</h2>
-    <p class="sub">Handcrafted puzzles and arcade fun you can enjoy anytime, anywhere.</p>
-    <div class="grid">
-      <div class="card">
-        <div class="thumb" style="background:linear-gradient(135deg,#ff8a3d,#ff5f6d);">2048</div>
-        <div class="body">
-          <span class="tag">Puzzle • Available Now</span>
-          <h3>2048 Infinity</h3>
-          <p>The classic number-merging puzzle, reimagined. Slide tiles, combine numbers, and chase an endless high score in this addictive brain teaser.</p>
-          <a href="https://play.google.com/store/apps/details?id=com.infinity_2048" class="btn" style="padding:10px 20px;font-size:.9rem;">Get on Google Play</a>
+  <!-- ======================= hero ======================= -->
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Independent game studio</span>
+        <h1>Calm little games.<br><span class="grad">Endless little wins.</span></h1>
+        <p class="lead">Sago Kriyo makes premium, minimalist mobile puzzles — quick sessions, careful details, no clutter. Our first title, <strong>2048&nbsp;Infinity</strong>, is arriving on Google&nbsp;Play.</p>
+        <div class="hero-ctas">
+          <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.sagokriyo.infinity" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.3 13.7 12 3.6 21.7c-.4-.2-.6-.6-.6-1.1V3.4c0-.5.2-.9.6-1.1zm11.5 8.3L5.9 1.7l11 6.3-1.8 2.6zm1.4 1.4 2.9-1.7c.8.5.8 1.7 0 2.2l-2.9 1.7-2-2.2 2-2zm-1.4 1.4 1.8 2.6-11 6.3 9.2-8.9z"/></svg>
+            Google&nbsp;Play
+          </a>
+          <a class="btn btn--glass" href="#games">Our games</a>
         </div>
       </div>
-      <div class="card soon">
-        <div class="thumb" style="background:linear-gradient(135deg,#7c5cff,#4facfe);">?</div>
-        <div class="body">
-          <span class="tag">Coming Soon</span>
-          <h3>New Puzzle</h3>
-          <p>We're cooking up our next brain-bending challenge. Stay tuned for something fresh from the Sago Kriyo studio.</p>
+
+      <div class="board-wrap">
+        <div class="board-hud">
+          <div class="hud-stat"><span class="k">Score</span><span class="v" id="hud-score" aria-live="polite">0</span></div>
+          <div class="hud-stat"><span class="k">Best</span><span class="v" id="hud-best">0</span></div>
+          <button class="btn btn--glass btn--small" id="hud-new" type="button" title="Start a new game">New</button>
+        </div>
+        <div class="board" id="hero-board" tabindex="0" role="application"
+             aria-label="Playable 2048 board. Use the arrow keys or swipe to slide tiles.">
+          <div class="board-cells" aria-hidden="true">
+            <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+          </div>
+          <div class="tiles" aria-hidden="true"></div>
+        </div>
+        <p class="board-hint">This is the real thing — swipe, or use <kbd>←</kbd> <kbd>↑</kbd> <kbd>↓</kbd> <kbd>→</kbd>. Reach 2048 and keep going.</p>
+        <noscript><p class="board-hint">The playable board needs JavaScript — the games below don't.</p></noscript>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= games ======================= -->
+  <section id="games">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Our games</span>
+        <h2>Small puzzles, deep care</h2>
+        <p>Every title is handcrafted end to end — rules, motion, sound, and dozens of themes.</p>
+      </div>
+      <div class="games-grid">
+
+        <article class="card card--hover game-card reveal">
+          <div class="game-art art-2048" aria-hidden="true">
+            <div class="mini" style="background:#c24fd0;color:#fff">512</div>
+            <div class="mini" style="background:#e0529c;color:#fff">1024</div>
+            <div class="mini" style="background:#f0568c;color:#fff">2048</div>
+          </div>
+          <div class="game-body">
+            <div class="game-meta">
+              <span class="pill pill--accent">Puzzle</span>
+              <span class="pill pill--gold">Launching soon on Google Play</span>
+            </div>
+            <h3>2048 Infinity</h3>
+            <p>The classic merge puzzle, rebuilt as something you'll want to live in. Slide, merge, and climb from quiet neutrals to warm gold — then keep going past 2048, forever.</p>
+            <div class="game-meta">
+              <span class="pill">9 modes</span>
+              <span class="pill">33 themes</span>
+              <span class="pill">Offline</span>
+              <span class="pill">4×4 → 8×8</span>
+            </div>
+            <div class="game-cta">
+              <a class="btn btn--primary btn--small" href="https://play.google.com/store/apps/details?id=com.sagokriyo.infinity" rel="noopener">Google Play</a>
+              <a class="btn btn--ghost btn--small" href="#modes">See the modes</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card card--hover game-card reveal">
+          <div class="game-art" aria-label="Pocket sudoku — tap an empty cell to fill it">
+            <div class="sudoku-mini">
+              <span class="given">1</span><button type="button" data-rc="0,1" aria-label="Reveal cell"></button><span class="given">3</span><span class="given">4</span>
+              <span class="given">3</span><button type="button" data-rc="1,1" aria-label="Reveal cell"></button><button type="button" data-rc="1,2" aria-label="Reveal cell"></button><span class="given">2</span>
+              <button type="button" data-rc="2,0" aria-label="Reveal cell"></button><span class="given">1</span><span class="given">4</span><span class="given">3</span>
+              <span class="given">4</span><span class="given">3</span><span class="given">2</span><button type="button" data-rc="3,3" aria-label="Reveal cell"></button>
+            </div>
+          </div>
+          <div class="game-body">
+            <div class="game-meta">
+              <span class="pill pill--accent">Logic</span>
+              <span class="pill">In development</span>
+            </div>
+            <h3>Sudoku</h3>
+            <p>A serene take on the classic — from Killer to Thermo to shape variants, with a seeded daily challenge and leaderboards to climb. Try the pocket board above.</p>
+            <div class="game-meta">
+              <span class="pill">13+ modes</span>
+              <span class="pill">Daily leaderboards</span>
+              <span class="pill">42 themes</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card game-card reveal">
+          <div class="game-art" aria-hidden="true">
+            <div class="art-mystery">?</div>
+          </div>
+          <div class="game-body">
+            <div class="game-meta">
+              <span class="pill">Unannounced</span>
+            </div>
+            <h3>Two tiles are touching…</h3>
+            <p>Something new is forming in the studio. It's small, it's calm, and it merges beautifully. Watch this space.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= modes ======================= -->
+  <section id="modes">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">2048 Infinity</span>
+        <h2>One puzzle, nine personalities</h2>
+        <p>These are the real modes from the game — same names, same rules, same taglines.</p>
+      </div>
+      <div class="modes-grid">
+        <button class="mode-chip reveal" type="button" data-mode="classic" aria-pressed="false">
+          <div class="mode-top"><span class="glyph" aria-hidden="true">▣</span><h3>Classic</h3></div>
+          <p class="tagline">Where it began. Reach the 2048 tile.</p>
+          <div class="mode-specs"><span class="pill">4×4</span><span class="pill">→ 2048</span><span class="pill">Undo ✓</span></div>
+        </button>
+        <button class="mode-chip reveal" type="button" data-mode="challenger" aria-pressed="false">
+          <div class="mode-top"><span class="glyph" aria-hidden="true">▣</span><h3>Challenger</h3></div>
+          <p class="tagline">More room to build. Reach the 4096 tile.</p>
+          <div class="mode-specs"><span class="pill">5×5</span><span class="pill">→ 4096</span><span class="pill">Undo ✓</span></div>
+        </button>
+        <button class="mode-chip reveal" type="button" data-mode="grand" aria-pressed="false">
+          <div class="mode-top"><span class="glyph" aria-hidden="true">▦</span><h3>Grand</h3></div>
+          <p class="tagline">Bigger board, no undo. Reach the 8192 tile.</p>
+          <div class="mode-specs"><span class="pill">6×6</span><span class="pill">→ 8192</span><span class="pill">No undo</span></div>
+        </button>
+        <button class="mode-chip reveal" type="button" data-mode="colossus" aria-pressed="false">
+          <div class="mode-top"><span class="glyph" aria-hidden="true">▥</span><h3>Colossus</h3></div>
+          <p class="tagline">Pure endurance, no undo. Reach the 16384 tile.</p>
+          <div class="mode-specs"><span class="pill">8×8</span><span class="pill">→ 16384</span><span class="pill">No undo</span></div>
+        </button>
+        <button class="mode-chip reveal" type="button" data-mode="merge_drop" aria-pressed="false">
+          <div class="mode-top"><span class="glyph" aria-hidden="true">⬇</span><h3>Merge Drop</h3></div>
+          <p class="tagline">Real-physics merge — aim, drop and fuse falling blocks. Don't overflow.</p>
+          <div class="mode-specs"><span class="pill">Physics</span><span class="pill">→ 2048</span></div>
+        </button>
+        <button class="mode-chip reveal" type="button" data-mode="zen" aria-pressed="false">
+          <div class="mode-top"><span class="glyph" aria-hidden="true">❍</span><h3>Zen</h3></div>
+          <p class="tagline">No timers. No pressure. Just flow.</p>
+          <div class="mode-specs"><span class="pill">4×4</span><span class="pill">Endless</span><span class="pill">Undo ✓</span></div>
+        </button>
+        <button class="mode-chip reveal" type="button" data-mode="time_rush" aria-pressed="false">
+          <div class="mode-top"><span class="glyph" aria-hidden="true">⧖</span><h3>Time Rush</h3></div>
+          <p class="tagline">Climb as high as you can in three minutes.</p>
+          <div class="mode-specs"><span class="pill">4×4</span><span class="pill">3:00</span><span class="pill">No undo</span></div>
+        </button>
+        <button class="mode-chip reveal" type="button" data-mode="survival" aria-pressed="false">
+          <div class="mode-top"><span class="glyph" aria-hidden="true">❖</span><h3>Survival</h3></div>
+          <p class="tagline">Move before the clock empties the board.</p>
+          <div class="mode-specs"><span class="pill">4×4</span><span class="pill">5s / move</span><span class="pill">No undo</span></div>
+        </button>
+        <button class="mode-chip reveal" type="button" data-mode="daily" aria-pressed="false">
+          <div class="mode-top"><span class="glyph" aria-hidden="true">◷</span><h3>Daily Challenge</h3></div>
+          <p class="tagline">One seeded board. Everyone plays the same.</p>
+          <div class="mode-specs"><span class="pill">4×4</span><span class="pill">→ 2048</span><span class="pill">Seeded</span></div>
+        </button>
+      </div>
+      <p class="modes-daily-note reveal">Today's Daily board is <strong data-daily-seed>#</strong> — everyone on Earth gets the same one. This site's featured theme rotates on the same seed.</p>
+    </div>
+  </section>
+
+  <!-- ======================= about ======================= -->
+  <section id="about">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">The studio</span>
+        <h2>Why "Sago Kriyo"?</h2>
+        <p>We're a small independent studio building the kind of games we want on our own home screens: quiet, polished, endlessly replayable. No dark patterns, no noise — just play.</p>
+      </div>
+      <div class="pillars">
+        <div class="card pillar reveal">
+          <span class="num" aria-hidden="true">2</span>
+          <h3>Calm by default</h3>
+          <p>Games that respect your attention. Timers only when you ask for them, silence when you don't.</p>
+        </div>
+        <div class="card pillar reveal">
+          <span class="num" aria-hidden="true">4</span>
+          <h3>Progression as ascent</h3>
+          <p>Quiet neutrals climb toward warm gold. Growth should feel like light changing, not confetti shouting.</p>
+        </div>
+        <div class="card pillar reveal">
+          <span class="num" aria-hidden="true">8</span>
+          <h3>Motion with restraint</h3>
+          <p>Every animation earns its place — and steps aside entirely if your device asks for reduced motion.</p>
+        </div>
+        <div class="card pillar reveal">
+          <span class="num" aria-hidden="true">16</span>
+          <h3>Make it yours</h3>
+          <p>Dozens of hand-tuned themes in every title. This page runs on the very same palettes — try the switcher up top.</p>
         </div>
       </div>
-      <div class="card soon">
-        <div class="thumb" style="background:linear-gradient(135deg,#43e97b,#38f9d7);">?</div>
-        <div class="body">
-          <span class="tag">Coming Soon</span>
-          <h3>New Arcade</h3>
-          <p>Fast, fun, and easy to pick up. Another title is in the works — more details coming soon.</p>
-        </div>
+
+      <div class="sec-head reveal" style="margin-top:var(--sp-2xl)">
+        <h3>Site achievements</h3>
+        <p class="dim">Yes, this page has achievements. Of course it does.</p>
+      </div>
+      <div class="ach-gallery reveal" aria-label="Site achievements">
+        <div class="ach" data-ach="first_merge"><span class="ach-icon" aria-hidden="true">✦</span><div><div class="t">First Merge</div><div class="d">Combine your first pair.</div></div></div>
+        <div class="ach" data-ach="reach_128"><span class="ach-icon" aria-hidden="true">◆</span><div><div class="t">Getting Warm</div><div class="d">Reach the 128 tile.</div></div></div>
+        <div class="ach" data-ach="theme_explorer"><span class="ach-icon" aria-hidden="true">❖</span><div><div class="t">Theme Explorer</div><div class="d">Try three different themes.</div></div></div>
+        <div class="ach" data-ach="mode_scholar"><span class="ach-icon" aria-hidden="true">▣</span><div><div class="t">Mode Scholar</div><div class="d">Peek at all nine modes.</div></div></div>
+        <div class="ach" data-ach="mini_solver"><span class="ach-icon" aria-hidden="true">✓</span><div><div class="t">Mini Solver</div><div class="d">Finish the pocket sudoku.</div></div></div>
+        <div class="ach" data-ach="deep_diver"><span class="ach-icon" aria-hidden="true">❍</span><div><div class="t">Deep Diver</div><div class="d">Visit every section.</div></div></div>
+        <div class="ach" data-ach="reach_2048"><span class="ach-icon" aria-hidden="true">∞</span><div><div class="t">Infinity</div><div class="d">Reach the 2048 tile.</div></div></div>
+        <div class="ach" data-ach="steady_hand"><span class="ach-icon" aria-hidden="true">◷</span><div><div class="t">Steady Hand</div><div class="d">Visit on three different days.</div></div></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="about">
-  <div class="container">
-    <div class="about">
-      <h2>About Sago Kriyo</h2>
-      <p>Sago Kriyo is an independent game studio focused on crafting simple, delightful mobile games. We believe great games don't need to be complicated — just fun, polished, and easy to love. Every title we build is designed to give you a moment of joy, whether you have five minutes or five hours.</p>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <h2>Get in Touch</h2>
-    <p class="sub">Questions, feedback, or partnership ideas? We'd love to hear from you.</p>
-    <div class="contact-box">
-      <p style="color:var(--muted);margin-bottom:12px;">Reach us anytime at</p>
-      <a class="email" href="mailto:hello@sagokriyo.com">hello@sagokriyo.com</a>
-    </div>
-  </div>
-</section>
-
-<footer id="privacy">
-  <div class="container">
-    <div class="foot">
-      <div>© <span id="yr"></span> Sago Kriyo. All rights reserved.</div>
-      <div style="display:flex;gap:20px;">
-        <a href="#privacy">Privacy Policy</a>
-        <a href="#contact">Contact</a>
-        <a href="https://play.google.com/store/apps/details?id=com.infinity_2048">Google Play</a>
+  <!-- ======================= contact ======================= -->
+  <section id="contact">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Contact</span>
+        <h2>We read everything</h2>
+        <p>Feedback, bug reports, theme ideas, partnership notes — all of it lands in the same inbox.</p>
+      </div>
+      <div class="card contact-card reveal">
+        <p class="dim" style="margin-bottom:8px">Write to us at</p>
+        <a class="email" href="mailto:sagokriyo@gmail.com">sagokriyo@gmail.com</a>
+        <p class="faint" style="margin-top:14px;font-size:.85rem">For privacy or data requests, see <a href="/privacy/">Privacy Policy</a> and <a href="/delete-account/">Account &amp; Data Deletion</a>.</p>
       </div>
     </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>© <span id="yr">2026</span> Sago Kriyo. All rights reserved.</div>
+      <div class="foot-links">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/delete-account/">Account &amp; Data Deletion</a>
+        <a href="https://play.google.com/store/apps/details?id=com.sagokriyo.infinity" rel="noopener">Google Play</a>
+      </div>
+    </div>
+    <p class="foot-note">Handmade HTML — no trackers, no cookies, no analytics. Your scores, achievements, and theme live in your browser and nowhere else. P.S. the board up top goes past 2048.</p>
   </div>
 </footer>
-<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 </body>
 </html>
