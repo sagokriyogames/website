@@ -261,7 +261,11 @@ h3 { font-size: 1.15rem; font-weight: 700; }
 }
 .theme-pop {
   position: absolute; right: 0; top: calc(100% + 10px);
-  width: min(320px, calc(100vw - 32px));
+  width: min(340px, calc(100vw - 32px));
+  max-height: min(68vh, 560px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
   background: var(--surface);
   border: 1px solid var(--stroke); border-radius: var(--r-lg);
   box-shadow: 0 24px 60px -12px var(--shadow);

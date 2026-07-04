@@ -136,15 +136,16 @@
       return b;
     }
 
-    var dark = document.createElement("div"); dark.className = "theme-grid";
-    var light = document.createElement("div"); light.className = "theme-grid";
-    SK.THEMES.order.forEach(function (id) {
-      (SK.THEMES.themes[id].light ? light : dark).appendChild(chipFor(id));
+    // grouped exactly like the game's Themes screen (minimal/fun/aesthetic/premium)
+    SK.groupedThemes().forEach(function (group) {
+      var h = document.createElement("h4");
+      h.textContent = group.category.charAt(0).toUpperCase() + group.category.slice(1);
+      var grid = document.createElement("div");
+      grid.className = "theme-grid";
+      group.ids.forEach(function (id) { grid.appendChild(chipFor(id)); });
+      pop.appendChild(h);
+      pop.appendChild(grid);
     });
-    var hd = document.createElement("h4"); hd.textContent = "Dark";
-    var hl = document.createElement("h4"); hl.textContent = "Light";
-    pop.appendChild(hd); pop.appendChild(dark);
-    pop.appendChild(hl); pop.appendChild(light);
 
     function syncUI() {
       var id = document.documentElement.dataset.theme;
